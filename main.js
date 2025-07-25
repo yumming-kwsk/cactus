@@ -138,7 +138,7 @@ function draw() {
   textAlign(CENTER,CENTER);
   textSize(sabos/3.4);
   textFont("Cherry Bomb One");
-  text('Tap the cactus!',0,-height/3.7);
+  text('Tap the cactus!',0,-height/3.1);
 }
 
 
@@ -285,7 +285,7 @@ function drawPot(x,y,s){
 function mousePressed() {
   for (let f of flowers) {
     let d = dist(mouseX, mouseY, width/2 + f.x, height/1.7 + f.y);
-    if (d < 100) {
+    if (d < 120) {
       f.isGrowing = true;
     }
   }
