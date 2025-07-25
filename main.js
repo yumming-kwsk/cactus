@@ -138,7 +138,7 @@ function draw() {
   textAlign(CENTER,CENTER);
   textSize(sabos/3.4);
   textFont("Cherry Bomb One");
-  text('Tap the cactus!',0,-height/3.6);
+  text('Tap the cactus!',0,-height/3.7);
 }
 
 
@@ -337,7 +337,7 @@ function drawStar(x, y, r, prickleNum) {
   function handleTouch(x, y) {
     for (let f of flowers) {
       let d = dist(x, y, width / 2 + f.x, height / 1.7 + f.y);
-      if (d < sabos / 1.8) {
+      if (d < sabos / 1.6) {
         f.isGrowing = true;
       }
     }
