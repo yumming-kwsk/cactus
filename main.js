@@ -341,6 +341,6 @@ function drawStar(x, y, r, prickleNum) {
         f.isGrowing = true;
       }
     }
-    return false; // デフォルトの挙動（スクロールとか）を防ぐ
+    // return false; // デフォルトの挙動（スクロールとか）を防ぐ
   }
   
