@@ -334,13 +334,22 @@ function drawStar(x, y, r, prickleNum) {
     }
   }
 
-  function touchEnded() {
+  function handleTouch(x, y) {
     for (let f of flowers) {
-      let d = dist(touchX, touchY, width / 2 + f.x, height / 1.7+100 + f.y);
-      if (d < 500) {
+      let d = dist(x, y, width / 2 + f.x, height / 1.7 + f.y);
+      if (d < sabos / 2) {
         f.isGrowing = true;
       }
     }
-    return false; // スクロール防止
   }
   
+  function mousePressed() {
+    handleTouch(mouseX, mouseY);
+  }
+  
+  function touchStarted() {
+    if (touches.length > 0) {
+      handleTouch(touches[0].x, touches[0].y);
+    }
+    return false; // スクロール防止
+  }
