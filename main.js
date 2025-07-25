@@ -45,7 +45,7 @@ function setup() {
 
   // 💐 右サボテンの花（x: width/4 にある → 中心起点で width/4）
   flowers.push({
-    x: width / 4,
+    x: width / 4+50,
     y: -sabos / 1.2,
     size: sabos / 3,
     color: col_f1,
@@ -55,7 +55,7 @@ function setup() {
 
 // 左のサボテン：左側花（変わらず）
 flowers.push({
-  x: -width / 4 - sabos * 0.37,
+  x: -width / 4 -50 - sabos * 0.37,
   y: -sabos * 0.61,
   size: sabos / 3.4,
   color: col_f1,
@@ -65,7 +65,7 @@ flowers.push({
 
 // 左のサボテン：右上の花（さらに上から少し右に寄せる）
 flowers.push({
-  x: -width / 4 + sabos * 0.22,  // ちょい右
+  x: -width / 4 -50 + sabos * 0.22,  // ちょい右
   y: -sabos*0.95,              // 少し下げる
   size: sabos / 3.8,
   color: col_f1,
@@ -128,17 +128,17 @@ function draw() {
 
   // 3. サボテンを上から描く
   drawSabo01(0, 0, sabos);
-  drawSabo02(width / 4, 0, sabos);
-  drawSabo03(-width / 4, 0, sabos);
+  drawSabo02(width / 4+50, 0, sabos);
+  drawSabo03(-width / 4-50, 0, sabos);
 
 
   fill(col_f2);
   strokeWeight(3);
   stroke(col_s1);
   textAlign(CENTER,CENTER);
-  textSize(sabos/4);
+  textSize(sabos/3.4);
   textFont("Cherry Bomb One");
-  text('Tap the cactus!',0,-height/2.8);
+  text('Tap the cactus!',0,-height/3.4);
 }
 
 
@@ -334,13 +334,13 @@ function drawStar(x, y, r, prickleNum) {
     }
   }
 
-  function touchStarted() {
+  function touchEnded() {
     for (let f of flowers) {
       let d = dist(touchX, touchY, width/2 + f.x, height/1.7 + f.y);
       if (d < 90) {
         f.isGrowing = true;
       }
     }
-    // return false; // デフォルトの挙動（スクロールとか）を防ぐ
+    return false;
   }
   
