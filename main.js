@@ -335,6 +335,9 @@ function drawStar(x, y, r, prickleNum) {
   }
 
   function touchEnded() {
+    fill(255, 0, 0, 100);
+  noStroke();
+  ellipse(touchX, touchY, 30);
     for (let f of flowers) {
       let d = dist(touchX, touchY, width/2 + f.x, height/1.7 + f.y+100);
       if (d < 300) {
