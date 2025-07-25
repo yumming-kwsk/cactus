@@ -337,7 +337,7 @@ function drawStar(x, y, r, prickleNum) {
   function touchEnded() {
     for (let f of flowers) {
       let d = dist(touchX, touchY, width/2 + f.x, height/1.7 + f.y);
-      if (d < 90) {
+      if (d < 130) {
         f.isGrowing = true;
       }
     }
