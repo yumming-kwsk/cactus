@@ -336,8 +336,8 @@ function drawStar(x, y, r, prickleNum) {
 
   function handleTouch(x, y) {
     for (let f of flowers) {
-      let d = dist(x, y, width / 2 + f.x, height / 1.7+100 + f.y);
-      if (d < sabos / 2) {
+      let d = dist(x, y, width / 2 + f.x, height / 1.7 + f.y);
+      if (d < sabos / 1.8) {
         f.isGrowing = true;
       }
     }
