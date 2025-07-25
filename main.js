@@ -335,12 +335,14 @@ function drawStar(x, y, r, prickleNum) {
   }
 
   function touchEnded() {
+    // タップ位置に赤丸出して確認
     fill(255, 0, 0, 100);
-  noStroke();
-  ellipse(touchX, touchY, 30);
+    noStroke();
+    circle(touchX, touchY, 30);
+  
     for (let f of flowers) {
-      let d = dist(touchX, touchY, width/2 + f.x, height/1.7 + f.y+100);
-      if (d < 300) {
+      let d = dist(touchX, touchY, width / 2 + f.x, height / 1.7 + f.y);
+      if (d < 100) {
         f.isGrowing = true;
       }
     }
