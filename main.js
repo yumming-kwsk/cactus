@@ -138,7 +138,7 @@ function draw() {
   textAlign(CENTER,CENTER);
   textSize(sabos/3.4);
   textFont("Cherry Bomb One");
-  text('Tap the cactus!',0,-height/2.5);
+  text('Tap the cactus!',0,-height/2.2);
 }
 
 
