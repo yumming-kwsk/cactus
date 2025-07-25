@@ -334,18 +334,16 @@ function drawStar(x, y, r, prickleNum) {
     }
   }
 
-  function touchEnded() {
-    // タップ位置に赤丸出して確認
-    fill(255, 0, 0, 100);
+  function touchStarted() {
+    fill(255, 0, 0, 100); // タップ位置に赤丸
     noStroke();
-    circle(touchX, touchY, 30);
+    ellipse(touchX, touchY, 30);
   
     for (let f of flowers) {
-      let d = dist(touchX, touchY, width / 2 + f.x, height / 1.7 + f.y);
+      let d = dist(touchX, touchY, width/2 + f.x, height/1.7 + f.y);
       if (d < 100) {
         f.isGrowing = true;
       }
     }
-    return false;
+    return false; // スクロール防止
   }
-  
