@@ -86,7 +86,7 @@ function draw() {
     background('#FFFAE3'); // 朝
   } else if (h >= 12 && h < 18) {
     background('#CDF1FF'); // 昼
-  } else if (h >= 18 && h < 21) {
+  } else if (h >= 18 && h < 20) {
     drawGradient('#FFD1A6', '#3C1C54'); // 夕方
     fill(255, 80); // 半透明の白
     noStroke();
